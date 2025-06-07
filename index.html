@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Salman Masih - Large Language Model</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Function to capture the current date
+    function getCurrentDate() {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      const today = new Date();
+      return today.toLocaleDateString(undefined, options);
+    }
+  </script>
   <style>
     body {
       transition: background-color 0.3s, color 0.3s;
@@ -14,6 +22,7 @@
       text-align: justify;
       line-height: 1.8;
     }
+    /* Highlighting colors */
     .highlight-orange {
       color: #f4a300; /* Orange */
       font-weight: bold;
@@ -34,6 +43,56 @@
       color: #8a2be2; /* Blue Violet */
       font-weight: bold;
     }
+    /* News section style */
+    #news {
+      background-color: #1e40af; /* Blue */
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-top: 20px;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-width: 300px; /* Minimum width */
+      min-height: 80px; /* Minimum height */
+      width: auto;
+      height: auto;
+    }
+    /* Flash effect for Latest News */
+    .flash {
+      animation: flash 1.5s infinite;
+    }
+    @keyframes flash {
+      0% { background-color: #1e40af; }
+      50% { background-color: #ff6347; }
+      100% { background-color: #1e40af; }
+    }
+    /* Mobile responsiveness fixes */
+    @media (max-width: 768px) {
+      header .max-w-7xl {
+        padding: 0 20px;
+      }
+      .md\:w-3/4 {
+        width: 100%;
+      }
+      .md\:w-1/4 {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+    /* Bold navigation tabs */
+    .nav-link {
+      font-weight: bold;
+    }
+    /* Social media links in horizontal layout */
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      width: 100%;
+    }
   </style>
 </head>
 
@@ -41,12 +100,12 @@
 <header class="bg-gray-100 p-4 shadow-md">
   <div class="max-w-7xl mx-auto flex justify-center items-center">
     <nav class="flex space-x-6 text-sm">
-      <a href="index.html#about" class="hover:underline">Home</a>
-      <a href="publications.html" class="hover:underline">Publications</a>
-      <a href="courses.html" class="hover:underline">Courses & Specializations</a>
-      <a href="reading.html" class="hover:underline">Reading</a>
-      <a href="teaching.html" class="hover:underline">Teaching</a>
-      <a href="workshops.html" class="hover:underline">Workshops & Tutorials</a>
+      <a href="index.html#about" class="nav-link hover:underline">Home</a>
+      <a href="publications.html" class="nav-link hover:underline">Publications</a>
+      <a href="courses.html" class="nav-link hover:underline">Courses & Specializations</a>
+      <a href="reading.html" class="nav-link hover:underline">Reading</a>
+      <a href="teaching.html" class="nav-link hover:underline">Teaching</a>
+      <a href="workshops.html" class="nav-link hover:underline">Workshops & Tutorials</a>
     </nav>
   </div>
 </header>
@@ -59,14 +118,14 @@
   <img src="assets/images/IMG-20211228-WA0002.jpg" alt="Salman Masih" class="rounded-full w-40 h-40 object-cover shadow-md">
   <h2 class="text-xl font-semibold">Salman Masih</h2>
   
-  <div class="flex flex-col space-y-2 w-full text-center text-sm">
+  <div class="social-links text-sm">
     <a href="https://scholar.google.com/citations?user=your_id" target="_blank" class="text-blue-600 hover:underline">Google Scholar</a>
-    <a href="https://twitter.com/your_username" target="_blank" class="text-blue-400 hover:underline">Twitter</a>
-    <a href="https://linkedin.com/in/your_username" target="_blank" class="text-blue-700 hover:underline">LinkedIn</a>
-    <a href="https://www.researchgate.net/profile/your_name" target="_blank" class="text-green-600 hover:underline">ResearchGate</a>
-    <a href="https://medium.com/@your_username" target="_blank" class="text-gray-800 hover:underline">Medium</a>
+    <a href="https://twitter.com/salmanpopa" target="_blank" class="text-blue-400 hover:underline">Twitter</a>
+    <a href="https://linkedin.com/in/salmanmasih" target="_blank" class="text-blue-700 hover:underline">LinkedIn</a>
+    <a href="https://www.researchgate.net/profile/Salman-Masih" target="_blank" class="text-green-600 hover:underline">ResearchGate</a>
+    <a href="https://medium.com/@salmanmasih" target="_blank" class="text-gray-800 hover:underline">Medium</a>
     <a href="https://github.com/salmanmasih" target="_blank" class="text-black hover:underline">GitHub</a>
-    <a href="https://huggingface.co/your_username" target="_blank" class="text-pink-600 hover:underline">Hugging Face</a>
+    <a href="https://huggingface.co/salmanpopa" target="_blank" class="text-pink-600 hover:underline">Hugging Face</a>
   </div>
 </aside>
 
@@ -74,16 +133,14 @@
     <section class="md:w-3/4 space-y-12">
       
       <!-- News Banner Section -->
-      <section id="news" class="bg-blue-500 text-white py-8 mt-12 rounded-lg">
-        <h3 class="text-2xl font-bold text-center">Latest News</h3>
-        <div class="mt-4">
-          <p class="bg-yellow-300 p-2 rounded-md font-bold text-black animate-pulse">
-            Published Alert!
-            <a href="https://www.mdpi.com/2079-9292/14/12/2320" target="_blank" class="text-blue-800 underline">
-              Transformer-Based Abstractive Summarization of Legal Texts in Low-Resource Languages
-            </a>
-          </p>
-        </div>
+      <section id="news" class="flash">
+        <h3 class="text-2xl font-bold text-white text-center">Latest News!!!</h3>
+        <p class="text-white mt-4">Publication Alert!!! 
+          <a href="https://www.mdpi.com/2079-9292/14/12/2320" target="_blank" class="text-blue-300 underline">
+            Transformer-Based Abstractive Summarization of Legal Texts in Low-Resource Languages
+          </a>
+        </p>
+        <p class="text-white mt-2">Date: <span id="news-date"></span></p>
       </section>
 
       <!-- About Me Section -->
@@ -98,7 +155,7 @@
         <p class="justified-text">I investigate <span class="highlight-orange">cross-lingual fairness</span> to ensure NLP models perform equitably across <span class="highlight-green">high-resource</span> and <span class="highlight-red">low-resource languages</span>, preventing <span class="highlight-green">biases</span> and <span class="highlight-green">performance disparities</span>. In the realm of <span class="highlight-purple">LLMs in multilingual settings</span>, I focus on enhancing model performance for <span class="highlight-red">low-resource languages</span> through techniques like <span class="highlight-green">transfer learning</span>, <span class="highlight-green">fine-tuning</span>, and <span class="highlight-green">domain adaptation</span>. I am particularly interested in <span class="highlight-purple">Parameter-Efficient Fine-Tuning (PEFT)</span> and techniques like <span class="highlight-purple">LoRA (Low-Rank Adaptation)</span>, which provide efficient ways to adapt large models to specific tasks while minimizing computational resources.</p>
         <p class="justified-text">Additionally, I explore <span class="highlight-blue">tokenless NLP</span>, an emerging approach in multilingual modeling that bypasses traditional <span class="highlight-orange">tokenization</span> to process raw text directly, offering potential improvements in <span class="highlight-green">efficiency</span> and <span class="highlight-green">robustness</span>, particularly for <span class="highlight-red">low-resource languages</span>. Lastly, I am interested in <span class="highlight-purple">interpretable NLP</span>, specifically developing transparent models that provide <span class="highlight-green">explainable outputs</span>, particularly in sensitive applications such as <span class="highlight-orange">legal domains</span>, where <span class="highlight-green">model decisions</span> need to be understood and justified.</p>
 
-        <h3 class="text-xl font-semibold mt-8">Further Details, Here is Complete CV Last Updated: 7th June 2025</h3>
+        <h3 class="text-xl font-semibold mt-8">You can find my latest CV here</h3>
         <p class="justified-text">For more details on my academic background, experience, and skills, please refer to my <a href="assets/pdf/Salman_Masih_CV.pdf" class="text-blue-500 underline" target="_blank">CV (PDF)</a>.</p>
       </section>
 
@@ -108,5 +165,10 @@
   <footer class="bg-gray-100 dark:bg-gray-800 text-center p-4 mt-12">
     <p>&copy; 2025 Salman Masih. Built with Tailwind CSS. Hosted on GitHub Pages.</p>
   </footer>
+
+  <script>
+    // Set the current date in the Latest News section
+    document.getElementById('news-date').textContent = getCurrentDate();
+  </script>
 </body>
 </html>
