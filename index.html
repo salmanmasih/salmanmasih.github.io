@@ -9,17 +9,44 @@
     body {
       transition: background-color 0.3s, color 0.3s;
     }
+    /* Justify content for the main text */
+    .justified-text {
+      text-align: justify;
+      line-height: 1.8;
+    }
+    .highlight-orange {
+      color: #f4a300; /* Orange */
+      font-weight: bold;
+    }
+    .highlight-blue {
+      color: #1e90ff; /* Dodger Blue */
+      font-weight: bold;
+    }
+    .highlight-green {
+      color: #32cd32; /* Lime Green */
+      font-weight: bold;
+    }
+    .highlight-red {
+      color: #ff6347; /* Tomato Red */
+      font-weight: bold;
+    }
+    .highlight-purple {
+      color: #8a2be2; /* Blue Violet */
+      font-weight: bold;
+    }
   </style>
 </head>
 
 <body class="bg-white text-gray-900 font-sans">
-<header class="bg-gray-100 p-2 shadow-sm">
-  <div class="max-w-7xl mx-auto flex justify-center">
-    <nav class="flex flex-wrap justify-center gap-4 text-sm">
+<header class="bg-gray-100 p-4 shadow-md">
+  <div class="max-w-7xl mx-auto flex justify-center items-center">
+    <nav class="flex space-x-6 text-sm">
       <a href="index.html#about" class="hover:underline">Home</a>
       <a href="publications.html" class="hover:underline">Publications</a>
       <a href="courses.html" class="hover:underline">Courses & Specializations</a>
       <a href="reading.html" class="hover:underline">Reading</a>
+      <a href="teaching.html" class="hover:underline">Teaching</a>
+      <a href="workshops.html" class="hover:underline">Workshops & Tutorials</a>
     </nav>
   </div>
 </header>
@@ -28,7 +55,7 @@
   <main class="max-w-7xl mx-auto px-6 py-12 flex flex-col md:flex-row gap-12">
     
 <!-- Sidebar (left) -->
-<aside class="md:w-1/4 flex flex-col items-center space-y-4">
+<aside class="md:w-1/4 flex flex-col items-center space-y-4 mb-8 md:mb-0">
   <img src="assets/images/IMG-20211228-WA0002.jpg" alt="Salman Masih" class="rounded-full w-40 h-40 object-cover shadow-md">
   <h2 class="text-xl font-semibold">Salman Masih</h2>
   
@@ -46,75 +73,33 @@
     <!-- Content (right) -->
     <section class="md:w-3/4 space-y-12">
       
-      <!-- News Banner Section - Moved to top -->
-<section id="news" class="bg-blue-500 text-white py-8 mt-12 rounded-lg">
-  <h3 class="text-2xl font-bold text-center">Latest News</h3>
-  <div class="mt-4">
-    <p class="bg-yellow-300 p-2 rounded-md font-bold text-black animate-pulse">
-      Published a paper on 
-      <a href="https://www.mdpi.com/2079-9292/14/12/2320" target="_blank" class="text-blue-800 underline">
-        Transformer-Based Abstractive Summarization of Legal Texts in Low-Resource Languages
-      </a>
-    </p>
-  </div>
-</section>
-
+      <!-- News Banner Section -->
+      <section id="news" class="bg-blue-500 text-white py-8 mt-12 rounded-lg">
+        <h3 class="text-2xl font-bold text-center">Latest News</h3>
+        <div class="mt-4">
+          <p class="bg-yellow-300 p-2 rounded-md font-bold text-black animate-pulse">
+            Published Alert!
+            <a href="https://www.mdpi.com/2079-9292/14/12/2320" target="_blank" class="text-blue-800 underline">
+              Transformer-Based Abstractive Summarization of Legal Texts in Low-Resource Languages
+            </a>
+          </p>
+        </div>
+      </section>
 
       <!-- About Me Section -->
       <section id="about">
         <h2 class="text-3xl font-bold">About Me</h2>
-        <p>I’m Salman Masih, a Ph.D. researcher in Natural Language Processing focusing on multilingual models, legal text summarization, and LLM fairness for low-resource languages like Urdu.</p>
+        <p class="justified-text">I’m Salman Masih, a Ph.D. researcher in Computer Science, specializing in <span class="highlight-blue">Natural Language Processing (NLP)</span>. My work focuses on <span class="highlight-green">multilingual models</span>, <span class="highlight-orange">legal text summarization</span>, and <span class="highlight-purple">fairness in large language models (LLMs)</span> for <span class="highlight-red">low-resource languages</span> like <span class="highlight-blue">Urdu</span>. I aim to tackle challenges in applying advanced NLP techniques to legal documents in languages with limited annotated resources, developing efficient, accurate, and fair models.</p>
+        <p class="justified-text">My thesis centers on <span class="highlight-orange">abstractive text summarization</span> for <span class="highlight-red">low-resource languages</span>, particularly <span class="highlight-blue">Urdu</span>, and includes four key papers on <span class="highlight-blue">transformer-based summarization</span>, <span class="highlight-green">few-shot</span> and <span class="highlight-green">zero-shot learning</span>, <span class="highlight-orange">architectural comparisons</span>, and <span class="highlight-purple">parameter-efficient fine-tuning</span>.</p>
 
         <h3 class="text-xl font-semibold mt-8">Research Interests</h3>
-        <p>My research interests include multilingual NLP, legal text summarization, hallucination mitigation, and cross-lingual fairness. I focus on developing effective techniques for low-resource languages, particularly Urdu, and enhancing the efficiency of large language models (LLMs) in these contexts.</p>
+        <p class="justified-text">My research interests span multiple areas of <span class="highlight-blue">Natural Language Processing (NLP)</span>. I focus on developing techniques for <span class="highlight-green">multilingual NLP</span>, particularly for <span class="highlight-red">low-resource languages</span> such as <span class="highlight-blue">Urdu</span>, intending to improve model performance in multilingual settings. A core area of my work is <span class="highlight-orange">Natural Language Understanding (NLU)</span> and <span class="highlight-orange">Natural Language Generation (NLG)</span>, where I enhance models' ability to comprehend <span class="highlight-orange">legal text</span> and generate high-quality, accurate summaries while preserving <span class="highlight-green">factual</span> and <span class="highlight-green">semantic integrity</span>.</p>
+        <p class="justified-text">Additionally, I work on <span class="highlight-blue">language modeling</span>, fine-tuning <span class="highlight-purple">large language models (LLMs)</span> to perform tasks like <span class="highlight-orange">summarization</span>, <span class="highlight-orange">translation</span>, and <span class="highlight-orange">classification</span> in low-resource settings. I specialize in <span class="highlight-orange">legal text summarization</span>, particularly <span class="highlight-orange">abstractive summarization</span> of <span class="highlight-orange">legal documents</span> in <span class="highlight-red">low-resource languages</span>, ensuring the generated summaries are <span class="highlight-green">concise</span>, <span class="highlight-green">accurate</span>, and <span class="highlight-green">legally sound</span>. My research also addresses <span class="highlight-green">hallucination mitigation</span>, aiming to reduce instances of fabricated or inaccurate content in generated text.</p>
+        <p class="justified-text">I investigate <span class="highlight-orange">cross-lingual fairness</span> to ensure NLP models perform equitably across <span class="highlight-green">high-resource</span> and <span class="highlight-red">low-resource languages</span>, preventing <span class="highlight-green">biases</span> and <span class="highlight-green">performance disparities</span>. In the realm of <span class="highlight-purple">LLMs in multilingual settings</span>, I focus on enhancing model performance for <span class="highlight-red">low-resource languages</span> through techniques like <span class="highlight-green">transfer learning</span>, <span class="highlight-green">fine-tuning</span>, and <span class="highlight-green">domain adaptation</span>. I am particularly interested in <span class="highlight-purple">Parameter-Efficient Fine-Tuning (PEFT)</span> and techniques like <span class="highlight-purple">LoRA (Low-Rank Adaptation)</span>, which provide efficient ways to adapt large models to specific tasks while minimizing computational resources.</p>
+        <p class="justified-text">Additionally, I explore <span class="highlight-blue">tokenless NLP</span>, an emerging approach in multilingual modeling that bypasses traditional <span class="highlight-orange">tokenization</span> to process raw text directly, offering potential improvements in <span class="highlight-green">efficiency</span> and <span class="highlight-green">robustness</span>, particularly for <span class="highlight-red">low-resource languages</span>. Lastly, I am interested in <span class="highlight-purple">interpretable NLP</span>, specifically developing transparent models that provide <span class="highlight-green">explainable outputs</span>, particularly in sensitive applications such as <span class="highlight-orange">legal domains</span>, where <span class="highlight-green">model decisions</span> need to be understood and justified.</p>
 
-        <h3 class="text-xl font-semibold mt-8">Education</h3>
-        <div class="space-y-4">
-          <div class="flex items-center space-x-4">
-            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-            <div>
-              <h4 class="text-lg font-semibold">Ph.D. Air University Islamabad, Pakistan (FEB 2019 – expected JUL 2025)</h4>
-              <p>Computer Science (NLP)</p>
-              <p class="italic">Thesis: Low-Resource Legal Text Abstractive Summarization by Exploiting Transformer-Based Approaches</p>
-            </div>
-          </div>
-
-          <div class="flex items-center space-x-4">
-            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-            <div>
-              <h4 class="text-lg font-semibold">MS (CS) Capital University of Science & Technology, Islamabad, Pakistan (SEP 2013 – JAN 2016)</h4>
-              <p>Computer Science (ML)</p>
-              <p class="italic">Thesis: Predicting Bollywood Movie Success Using Zee Cine & IFFA Awards</p>
-            </div>
-          </div>
-
-          <div class="flex items-center space-x-4">
-            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-            <div>
-              <h4 class="text-lg font-semibold">MCS Virtual University of Pakistan, Lahore, Pakistan (APR 2011– APR 2013)</h4>
-              <p>Computer Science (DB)</p>
-            </div>
-          </div>
-
-          <div class="flex items-center space-x-4">
-            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-            <div>
-              <h4 class="text-lg font-semibold">B.Sc. University of the Punjab, Lahore, Pakistan (SEP 2007 – SEP 2010)</h4>
-              <p>Computer Science, Mathematics & Statistics</p>
-            </div>
-          </div>
-        </div>
-
-        <h3 class="text-xl font-semibold mt-8">Experience</h3>
-        <ul class="list-disc list-inside">
-          <li>Teaching Assistant, Databricks (SEP 2023 – SEP 2024)</li>
-          <li>Lecturer, Air University, Islamabad, Pakistan (SEP 2021 – SEP 2022)</li>
-          <li>Lecturer, Foundation University Islamabad, Pakistan (MAR 2020 – SEP 2021)</li>
-          <li>Lecturer, University of Sialkot, Pakistan (OCT 2016 – FEB 2020)</li>
-        </ul>
-
-        <h3 class="text-xl font-semibold mt-8">CV Overview</h3>
-        <p>For more details on my academic background, experience, and skills, please refer to my <a href="assets/pdf/Salman_Masih_CV.pdf" class="text-blue-500 underline" target="_blank">CV (PDF)</a>.</p>
+        <h3 class="text-xl font-semibold mt-8">Further Details, Here is Complete CV Last Updated: 7th June 2025</h3>
+        <p class="justified-text">For more details on my academic background, experience, and skills, please refer to my <a href="assets/pdf/Salman_Masih_CV.pdf" class="text-blue-500 underline" target="_blank">CV (PDF)</a>.</p>
       </section>
 
     </section>
